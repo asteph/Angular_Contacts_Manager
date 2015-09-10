@@ -51,7 +51,7 @@
 	                <td class="email">{{ contact.email }}</td>
 	                <td class="phone">{{ contact.phone }}</td>
 	                <td>
-	                    <button class="edit-button action btn btn-default" data-toggle="modal" data-target="#editModal">Edit</button>
+	                    <button class="edit-button action btn btn-default" ng-click='select($index)' data-toggle="modal" data-target="#editModal">Edit</button>
 	                    <button class="remove-button action btn btn-danger" ng-click="removeContact($index)">Remove</button>
 	                </td>
 	            </tr>
@@ -69,21 +69,21 @@
                         <form>
                             <div class="form-group">
                                 <label for="contact-name" class="control-label">Name</label>
-                                <input type="text" class="form-control" id="contact-name">
+                                <input type="text" class="form-control" id="contact-name" ng-model="updateContact.name">
                             </div>
                             <div class="form-group">
                                 <label for="contact-email" class="control-label">Email address</label>
-                                <input type="text" class="form-control" id="contact-email">
+                                <input type="text" class="form-control" id="contact-email" ng-model="updateContact.email">
                             </div>
                             <div class="form-group">
                                 <label for="contact-phone" class="control-label">Phone number</label>
-                                <input type="text" class="form-control" id="contact-phone">
+                                <input type="text" class="form-control" id="contact-phone" ng-model="updateContact.phone">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button id="save-button" class="btn btn-primary" data-dismiss="modal">Save Changes</button>
+                        <button id="save-button" class="btn btn-primary" ng-click="editContact()" data-dismiss="modal">Save Changes</button>
                     </div>
                 </div>
             </div>
@@ -106,6 +106,9 @@
             <button id="clear-button" type="reset" class="btn btn-default">Clear</button>
             <button id="add-button" type="submit" class="btn btn-success">Add Contact</button>
         </form>
+        <code>
+        	{{ updateContact | json }}
+        </code>
     </main> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	<script src="/js/contacts.js"></script>

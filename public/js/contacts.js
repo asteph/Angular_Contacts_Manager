@@ -32,8 +32,18 @@
             $scope.newContact = {};
         };
         $scope.removeContact = function($index){
+            console.log($scope.contacts[$index].name);
             $scope.contacts.splice($index, 1);
             console.log($index);
+        };
+        $scope.select = function ($index) {
+            $scope.selectedContact = $index;
+            console.log($scope.selectedContact);
+        }
+        $scope.updateContact = {};
+        $scope.editContact = function(){
+            $scope.contacts[$scope.selectedContact] = $scope.updateContact;
+            $scope.updateContact = {};
         };
     }]);
 })();
