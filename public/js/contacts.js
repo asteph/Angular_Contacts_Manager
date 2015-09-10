@@ -40,10 +40,5 @@
             $scope.selectedContact = $index;
             console.log($scope.selectedContact);
         }
-        $scope.updateContact = {};
-        $scope.editContact = function(){
-            $scope.contacts[$scope.selectedContact] = $scope.updateContact;
-            $scope.updateContact = {};
-        };
     }]);
 })();

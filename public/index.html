@@ -34,7 +34,7 @@
 	<main class="col-md-10 col-md-offset-1" ng-controller="ContactsController">
 	    <h1 class="pull-left">Contacts Manager</h1>
 	    <div  id="search-div" class="pull-right col-sm-3 col-xs-12">
-	        <input id="search-input"type="text" class="form-control " placeholder="Contact Search" name="search">
+	        <input id="search-input" type="text" class="form-control " placeholder="Contact Search" name="search">
 	    </div>
 	    <table class="table table-striped">
 	        <thead>
@@ -69,15 +69,15 @@
                         <form>
                             <div class="form-group">
                                 <label for="contact-name" class="control-label">Name</label>
-                                <input type="text" class="form-control" id="contact-name" ng-model="updateContact.name">
+                                <input type="text" class="form-control" id="contact-name" ng-model="contacts[selectedContact].name">
                             </div>
                             <div class="form-group">
                                 <label for="contact-email" class="control-label">Email address</label>
-                                <input type="text" class="form-control" id="contact-email" ng-model="updateContact.email">
+                                <input type="text" class="form-control" id="contact-email" ng-model="contacts[selectedContact].email">
                             </div>
                             <div class="form-group">
                                 <label for="contact-phone" class="control-label">Phone number</label>
-                                <input type="text" class="form-control" id="contact-phone" ng-model="updateContact.phone">
+                                <input type="text" class="form-control" id="contact-phone" ng-model="contacts[selectedContact].phone">
                             </div>
                         </form>
                     </div>
